@@ -1,0 +1,4 @@
+module.exports = {
+    token: 'BOT_TOKEN',
+    ownerId: 'YOUR_USER_ID',
+};
