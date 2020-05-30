@@ -63,7 +63,7 @@ data.loadData((res) => {
     if (res) {
         data.saveBackup();
         setInterval(() => data.saveData(), 1000 * 60 * 60);
-        setInterval(() => data.saveBackup(), 24 * 1000 * 60 * 60);
+        setInterval(() => data.saveBackup(), 7 * 24 * 1000 * 60 * 60);
         client.login(config.token);
     } else {
         console.log('Exiting...');
