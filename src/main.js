@@ -48,11 +48,11 @@ client.on('message', msg => {
         }
     }
 
-    if (msg.author.id === config.ownerId && tokens[0].toLowerCase() === 'alias') {
+    if (tokens.length < 3) return;
+
+    if (tokens[0].toLowerCase() === 'alias' && (msg.author.id === config.ownerId || msg.author.id === tokens[2])) {
         data.setAlias(tokens[1].toLowerCase(), tokens[2]);
     }
-
-    if (tokens.length < 3) return;
 
     if (tokens[0].toLowerCase() === 'reset' && tokens[1].toLowerCase() === 'my') {
         data.reset(msg.author.id, tokens.slice(2));
