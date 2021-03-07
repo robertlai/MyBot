@@ -27,4 +27,4 @@ node_modules
 config.js
 data.json
 backup
-lib
+dist
