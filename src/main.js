@@ -1,16 +1,16 @@
 import fs from 'fs';
-import Discord from 'discord.js';
+import { Client, Intents } from 'discord.js';
 
 import config from '../config';
 import data from './data';
 
-const client = new Discord.Client();
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', msg => {
+client.on('messageCreate', msg => {
     // Ignore self
     if (msg.author.id === client.user.id) return;
 
